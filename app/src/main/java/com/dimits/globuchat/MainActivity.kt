@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val autoReplyTime = sharedPreferences.getString(getString(R.string.key_auto_reply_time),"")
         Log.i("MainActivity", "auto Reply time: $autoReplyTime ")
+
+        val publicInfo = sharedPreferences.getStringSet(getString(R.string.key_public_info), null)
+        Log.i("MainActivity", "Public info: $publicInfo ")
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

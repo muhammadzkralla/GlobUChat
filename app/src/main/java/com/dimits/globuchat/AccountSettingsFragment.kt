@@ -5,16 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.dimits.globuchat.R
+import androidx.navigation.fragment.NavHostFragment
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 
 
-class AccountSettingsFragment : Fragment() {
+class AccountSettingsFragment : PreferenceFragmentCompat() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
 
-        return inflater.inflate(R.layout.fragment_account_settings, container, false)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.account_settings, rootKey)
+
+
     }
 }
